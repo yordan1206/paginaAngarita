@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Práctica 2</title>
+  </head>
+
+  <body>
+
+    <main>
+    Views:<h6 id="visitas"></h6>
+    Date:<h4 id="output"></h4>
+    <hr>
+    <h1>Buenos Aires</h1>
+    <h4>Inspire Learning</h4>
+    <p> Learn any language with a diferent <strong>methodology</strong></p>
+    <!-- Comentarios-->
+    <a href="#info1">About us</a>
+    <hr>
+    <a href="#info2">our services</a>
+    <hr>
+    <h2>What do you want?</h2>
+      <ul> 
+    <li>Travel</li><input type ="checkbox">
+    <li>Study</li><input type ="checkbox">
+    <li>Live</li><input type ="checkbox">
+    <input type="submit" value="enviar">
+    <hr>
+    <h2>Our services</h2>
+      </ul>
+      <ol>
+        <li>Spanish package</li>
+        <li>French package</li>
+        <li>Portuguese package</li>
+      </ol>
+
+    <hr>
+    <h2> Let's Get To Know Us</h2>
+    <a href="./iniciodesesion.html" target="_blank">Login</a>
+    <br>
+    <a href="./galeria2.html" target="_blank">create an account!</a>
+    </main>
+    <main>
+      <p>Let's inspire learning together</p>
+    </main>
+    
+    <h2 id="info1">About us</h2>
+    <p>We are more than an academy, we provide services that make our lifes experiences 
+      meaningful being articulated with learning for living, traveling and enjoyment.</p>
+    <hr>
+    <h2 id="info2">our services</h2>
+    <p>We want to provide our educational services integrated with 
+      tourism in our beatiful Latin America, depending on the language you want to learn you 
+      will travel to:
+      French Guiana, Colombia or Brazil</p>
+    <h3>Links you may find interesting to practice:</h3>
+    <h4>
+      <a href="https://aprenderespanol.org/" target="_blank" rel="noopener noreferrer">Spanish Exercises</a>
+      <hr>
+      <a href="https://www.mondly.com/portuguese-grammar" target="_blank" rel="noopener noreferrer">Portuguese Exercises</a>
+      <hr>
+      <a href="https://apprendre.tv5monde.com/es/collection-all" target="_blank" rel="noopener noreferrer">French Exercises</a>
+    </h4>
+    <a href="https://www.youtube.com/watch?v=NyUcCPDOdSk"><img src="./Images/kisspng-eiffel-tower-display-resolution-wallpaper-paris-france-eiffel-5a7a109ace90f6.2223284515179490828461.png">
+    <br><alt>French Guiana Info</alt></a>
+    <hr>
+
+    <script>
+      let visitasActuales = localStorage.getItem("visitas");
+      if (visitasActuales){
+        let aumento = parseInt(visitasActuales) + 1;
+        document.getElementById("visitas").innerHTML = aumento;
+        localStorage.setItem("visitas", aumento);
+      }else{
+        localStorage.setItem("visitas", 1);
+        document.getElementById("visitas").innerHTML = 1;
+      }
+      
+    </script>
+    <script>
+
+      var date = new Date();
+      var output = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear();
+      document.getElementById("output").innerHTML=output;
+    </script>
+
+
+  </body>
+
+</html>
